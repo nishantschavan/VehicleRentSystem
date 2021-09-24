@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.row{
+    display: flex;
+}
+
+.col{
+    flex-basis: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h5{
+    color:#2f0f64;
+}
