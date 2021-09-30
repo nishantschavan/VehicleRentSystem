@@ -1,7 +1,8 @@
 import './App.css';
 import { Route } from 'react-router-dom';
-import Homepage from './Components/HomePage/Homepage';
 import SecondPage from './Components/HomePage/SecondPage';
+import Signup from './Components/HomePage/Signup';
+import LoginForm from './Components/HomePage/LoginForm';
 
 
 function App() {
@@ -9,11 +10,19 @@ function App() {
     <div className="app">
 
       <Route exact path="/">
-        <Homepage/>
+        <LoginForm/>
       </Route>
 
       <Route path="/secondpage">
         <SecondPage/>
+      </Route>
+
+      <Route path="/login">
+        <LoginForm/>
+      </Route>
+
+      <Route path="/signup">
+        <Signup/>
       </Route>
 
     </div>
