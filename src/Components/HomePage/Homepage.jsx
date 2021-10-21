@@ -13,6 +13,7 @@ const Homepage = () => {
     <>
       <div className="Home_page">
         <img src={Scooty} alt="" />
+
         <div className="secondhalf">
           <div className="row">
             <h1 className="display-4">
