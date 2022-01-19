@@ -1,30 +1,17 @@
-import './App.css';
-import { Route } from 'react-router-dom';
-import SecondPage from './Components/HomePage/SecondPage';
-import Signup from './Components/HomePage/Signup';
-import LoginForm from './Components/HomePage/LoginForm';
-import Home from './Components/HomePage/Home';
+import "./App.css";
+import { Route } from "react-router-dom";
+import SignInPage from "./pages/SignIn-SignUp-page/SignInPage";
+import SignUpPage from "./pages/SignIn-SignUp-page/SignUpPage";
 
 function App() {
   return (
     <div className="app">
-
-      <Route exact path="/">
-        <Home/>
+      <Route exact path="/signIn">
+        <SignInPage />
       </Route>
-
-      <Route path="/secondpage">
-        <SecondPage/>
+      <Route exact path="/signUp">
+        <SignUpPage />
       </Route>
-
-      <Route path="/login">
-        <LoginForm/>
-      </Route>
-
-      <Route path="/signup">
-        <Signup/>
-      </Route>
-
     </div>
   );
 }
