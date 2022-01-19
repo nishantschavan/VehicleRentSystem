@@ -3,14 +3,14 @@ import { Route } from 'react-router-dom';
 import SecondPage from './Components/HomePage/SecondPage';
 import Signup from './Components/HomePage/Signup';
 import LoginForm from './Components/HomePage/LoginForm';
-
+import Home from './Components/HomePage/Home';
 
 function App() {
   return (
     <div className="app">
 
       <Route exact path="/">
-        <LoginForm/>
+        <Home/>
       </Route>
 
       <Route path="/secondpage">
