@@ -1,115 +1,183 @@
 *{
-    margin: 0;
+    margin:0;
     padding: 0;
 }
 
-.header{
-    min-height: 100vh;
-    width: 100%;
-    // background-image: url(../../Images/home.png);
-    background-position:center;
-    position: relative;
-    background-size: cover;
-}
-
-.nav-links{
-    position: absolute;
-    top:0;
-    right: 0;
-    margin-top: 20px;
-    display: flex;
-}
-
-.nav-links ul li{
-    display: inline-block;
-    padding:20px 30px;
-    font-size: large;
-}
-
-.signin-btn{
-    display: inline-block;
-    color:#fff;
-    background: #A74602;
-    padding:20px 30px;
-    margin-right: 20px;
-    height: 70px;
-}
-
-.title{
-    display: flex;
-    margin: auto;
-    position: absolute;
-    top:25%;
-    align-items: center;
+.container{
+    height: 100vh;
     width: 100vw;
-    background-color: #cef717;
+    /* background-color: rgb(53, 250, 250); */
+    overflow: hidden;
+}
+
+.header{
+    height: 10vh;
+    width: 100vw;
+    position: relative;
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.navbar{
+    /* background-color: burlywood; */
+    display: flex;
+    width: 50vw;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar a{
+    text-decoration: none;
+    color:brown;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#signinbtn{
+    background-color: brown;
+    padding: 10px 20px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mainpage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* background-color: blue; */
+    margin-top: 5vh;
 }
 
 .firsthalf{
-    padding-left: 120px;
-    flex:1;
-    background-color: #3fa6cc;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    display: inline-block;
+    margin: auto;
+}
+
+.content h1{
+    font-size: 280%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content h4{
+    font-size: 150%;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#booknowbtn{
+    background-color:#508599 ;
+    padding: 3% 20%;
+    color: white;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4vh;
 }
 
 .secondhalf{
-    flex: 2;
-    background-color: #1ac969;
-    background-size: cover;
+    flex: 1;
 }
+
 .secondhalf img{
-    height: 300px;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
 }
 
-.title h1{
-    font-family: Open Sans;
-    font-style: normal;
-    font-size: 62px;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.booknow-btn{
-    display: inline-block;
-    color:#fff;
-    background: #508599;
-    padding:20px 30px;
-    margin-top: 20px;
-    width: 350px;
-    height: 90px;
-    text-align: center;
-    font-size: 200%;
-    text-decoration: none;
-}
-
-.sharebtns{
+.sharetab{
+    position: absolute;
+    bottom: 3%;
     display: flex;
-    flex-direction: column;
-    width:2.5%;
-    position: fixed;
-    bottom: 0;
+    flex-direction: row;
+    align-items: center;
+    margin: 2%;
 }
 
-.sharebtns img{
-    margin: 2px;
+.bottomnavbar{
+    display: none;
 }
 
-.sharebtns h4{
-    transform: rotate(-90deg);
-
-}
-
-@media (max-width:700px){
-    .title{
-        flex-direction: column;
+@media (max-width:700px) {
+    #bubble1{
+        width:100px;
+        height: 100px;
     }
-    .title h1{
-        font-size: 32px;
+    #bubble2{
+        left: 8%;
+        width:200px;
+        height: 200px;
+        transform: translate(0%,-40%);
+    }
+    #bubble3{
+        /* width: 100px;
+        height: 100px;
+        right:30%; */
+        display: none;
+    }
+    #bubble4{
+        /* height: 200px;
+        width: 200px; */
+        display: none;
+    }
+    #bubble5{
+        height: 50px;
+        width: 50px;
+    }
+    #bubble6{
+        height: 70px;
+        width: 70px;
+        bottom: 6%;
+    }
+    .header{
+        height: 20vh;
+    }
+    .mainpage{
+        flex-direction: column-reverse;
     }
     .firsthalf{
-        padding-left: 10px;
+        margin-top: 5%;
     }
-    .title img{
-        width:90%;
+    .content h1{
+        font-size: 250%;
     }
-   
+    .content h4{
+        font-size: 100%;
+    }
+    #booknowbtn{
+        padding: 10px 20px;
+        font-size: 2vh;
+    }
+    .navbar a{
+        display: none;
+    }
+    #signinbtn{
+        visibility: visible;
+        padding: 10px 20px;
+        font-size:large;
+    }
+    .bottomnavbar{
+        display: block;
+        background-color: red;
+        position: fixed;
+        height: 10vh;
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .navtoggle{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 10vh;
+        width: 100vw;
+    }
 }

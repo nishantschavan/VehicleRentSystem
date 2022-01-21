@@ -1,42 +1,50 @@
 import React from 'react'
 import './Home.scss';
-import titleimg from "../../Images/titleimg.png";
-import instagram from "../../Images/instagramicon.png";
-import facebook from "../../Images/Facebookicon.png";
-import twitter from "../../Images/twittericon.png";
-import gmail from "../../Images/gmailicon.png";
-import whatsapp from "../../Images/whatsappicon.png";
+import titleimg from '../../Images/titleimg.png';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import MailIcon from '@mui/icons-material/Mail';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Home = ()=>{
     return(
-        <div className='header'>
-            <nav>
-                <div className='nav-links'>
-                    <ul>
-                        <li>Home</li>
-                        <li>Dashboard</li>
-                        <li>Profile</li>
-                    </ul>
-                    <a className='signin-btn'>Sign in</a>
-                </div>
-            </nav>
-            <div className="title">
-                <div className="firsthalf">
-                    <h1>Always the ride <br /> where you want</h1>
-                    <h3>Self auto service for near travelling</h3>
-                    <a href="" className="booknow-btn">Book now</a>
-                </div>
-                <div className="secondhalf">
-                    <img src={titleimg} alt="" />
+        <div class="container">
+            <div class="bottomnavbar">
+                <div class="navtoggle">
+                    <a href="">Home</a>
+                    <a href="">Dashboard</a>
+                    <a href="">Profile</a>
+                    <a href="">Setting</a>
                 </div>
             </div>
-            <div className="sharebtns">
-                <img src={instagram} alt="" />
-                <img src={facebook} alt="" />
-                <img src={twitter} alt="" />
-                <img src={gmail} alt="" />
-                <img src={whatsapp} alt="" />
+            <div class="header">
+                <div class="navbar">
+                    <a href="">Home</a>
+                    <a href="">Dashboard</a>
+                    <a href="">Profile</a>
+                    <button id="signinbtn">sign in</button>
+                </div>
+            </div>
+            <div class="mainpage">
+                <div class="firsthalf">
+                    <div class="content">
+                        <h1>Always the ride <br/> where you want</h1>
+                        <h4>Self auto service for near travelling</h4>
+                        <button id="booknowbtn">Book now</button>
+                    </div>
+                </div>
+                <div class="secondhalf">
+                    <img src={titleimg} alt=""/>
+                </div>
+            </div>
+            <div class="sharetab">
                 <h4>Share</h4>
+                <FacebookIcon/>
+                <WhatsAppIcon/>
+                <InstagramIcon />
+                <TwitterIcon />
+                <MailIcon />
             </div>
         </div>
     )
