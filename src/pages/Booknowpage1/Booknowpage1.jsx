@@ -35,7 +35,7 @@ const Booknowpage1 = () => {
                         width="40vw"
                         height="300px"
                         mapStyle={"mapbox://styles/nishant16032001/ckywn84jc000514o50tkgi2t3"}
-                        mapboxApiAccessToken={"pk.eyJ1IjoibmlzaGFudDE2MDMyMDAxIiwiYSI6ImNreXdscTZxczA5amsyb214M2IyNTJncDgifQ.9pqNKAyLr2ohkchwzMR5Yg"}
+                        mapboxApiAccessToken={process.env.React_App_MAPBOX_TOKEN}
                         onViewportChange={(viewport) => setViewport(viewport)}
                     >
                     </ReactMapGL>
