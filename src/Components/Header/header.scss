@@ -1,0 +1,110 @@
+*{
+    font-family: 'Comfortaa', cursive;
+}
+
+.header{
+    height: 15vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    // border: 2px solid orange;
+}
+
+.navbar{
+    /* background-color: burlywood; */
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-size: 1.5vw;
+    margin: 3vh;
+    color:#FB4C4C;
+}
+
+.navbar a::after{
+    content: '';
+    width:0%;
+    height:3px;
+    background: #FB4C4C;
+    display: block;
+    margin:auto;
+    transition: 0.5s;
+}
+
+.navbar a:hover::after{
+    width: 100%;
+}
+
+#signinbtn{
+    background-color: #FB4C4C;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    font-size: 1.5vw;
+}
+
+#signinbtn:hover{
+    background: white;
+    color:#FB4C4C;
+    border: 2px solid #FB4C4C;
+    transition: 0.5s;
+}
+
+@media (max-width:800px) {
+    .header{
+        justify-content: center;
+        background-color: rgba(255, 255, 255, .15);  
+        backdrop-filter: blur(5px);
+        position: fixed;
+        top: 0;
+        overflow: hidden;
+    }
+    .navbar{
+        flex: 1;
+    }
+}
+@media (max-width:800px) {
+    .navbar a{
+        font-size: 2vw;
+    }
+}
+
+@media (max-width:700px) {
+    .navbar a{
+        font-size: 2vw;
+    }
+    #signinbtn{
+        font-size: 2vw;
+        width: 15vw;
+        height: 7vh;
+    }
+}
+
+@media (max-width:500px) {
+    .navbar a{
+        font-size: 3vw;
+    }
+    #signinbtn{
+        font-size: 3vw;
+        width: 20vw;
+        height: 7vh;
+    }
+}
+
+@media (max-width:400px) {
+    .navbar a{
+        display: none;
+    }
+    #signinbtn{
+        margin:1vh ;
+        font-size: 2.5vw;
+    }
+}

@@ -22,17 +22,18 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit} className="form-container">
         <b
           style={{
-            marginBottom: "75px",
+            marginBottom: "25px",
             fontSize: "30px",
             width: "80%",
             textAlign: "center",
           }}
         >
-          Login
+          Log in yourself, quickly!
         </b>
+        <h4>Enter your Email and password carefully.</h4>
 
         <div className="form-control">
-          <label className="login-labels">Email Id</label>
+          {/* <label className="login-labels">Email Id</label> */}
           <input
             className="form-input"
             name="emailId"
@@ -44,7 +45,7 @@ const LoginForm = () => {
           />
         </div>
         <div className="form-control">
-          <label className="login-labels">Password</label>
+          {/* <label className="login-labels">Password</label> */}
           <input
             className="form-input"
             name="password"
@@ -58,8 +59,8 @@ const LoginForm = () => {
         <button type="submit" className="login-btn">
           Login
         </button>
-        <Link to={"/signUp"} style={{ marginTop: "30px" }}>
-          New User? Create account
+        <Link to={"/signUp"}>
+            Don’t have an account ?
         </Link>
       </form>
     </div>
