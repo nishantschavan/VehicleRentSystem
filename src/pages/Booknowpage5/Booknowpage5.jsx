@@ -15,7 +15,7 @@ const Booknowpage5 = ()=> {
     return(
         <div className="container">
             <Header/>
-            <Stepsbar/>
+            <Stepsbar activesteps={5}/>
             <div className="mainpage">
                 <div className="firsthalf">
                     <div className="content">

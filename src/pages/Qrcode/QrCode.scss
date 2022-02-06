@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.qrcode-bigwrapper{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.qrcode-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    width: 100vw;
+    height: 80vh;
+    border: 2px solid green;
+}
+
+#webcam-btn{
+    position: absolute;
+    left:50%;
+    transform: translate(-50%,0%);
+}

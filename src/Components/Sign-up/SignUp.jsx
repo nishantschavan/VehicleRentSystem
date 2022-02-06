@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Form from "../Form/Form";
 import "./SignUp.scss";
+
 const SignUp = () => {
   const [error, setError] = useState(false);
   const [data, setData] = useState();
@@ -24,7 +25,7 @@ const SignUp = () => {
 
   return (
     <div className="signUp-container">
-      <h1>Sign Up here 🚀 </h1>
+      <h1>Sign Up here 🚀</h1>
       <Form
         onSubmit={handleSubmit}
         checkNumber={checkNumber}
@@ -32,7 +33,7 @@ const SignUp = () => {
         formLabel={[
           {
             name: "fullname",
-            label: "Fullname",
+            label: "Name",
             type: "text",
             placeholder: "enter your name",
             handleChange: (target) => {
@@ -42,7 +43,7 @@ const SignUp = () => {
           },
           {
             name: "contact_info",
-            label: "Contact Number",
+            label: "Contact",
             type: "number",
             placeholder: "contact number",
             handleChange: (target) => {
@@ -63,7 +64,7 @@ const SignUp = () => {
           },
           {
             name: "password",
-            label: "create password",
+            label: "Create password",
             type: "password",
             placeholder: "create password",
             handleChange: (target) => {

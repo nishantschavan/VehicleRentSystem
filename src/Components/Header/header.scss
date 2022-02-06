@@ -3,14 +3,16 @@
 }
 
 .header{
-    height: 15vh;
+    height: 80px;
     width: 100%;
-    position: relative;
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    // border: 2px solid orange;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
 }
 
 .navbar{
@@ -56,6 +58,15 @@
     color:#FB4C4C;
     border: 2px solid #FB4C4C;
     transition: 0.5s;
+}
+
+#profilebtn{
+    background-color: #FB4C4C;
+    padding: 10px 12px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5vw;
 }
 
 @media (max-width:800px) {
