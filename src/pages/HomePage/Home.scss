@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.Home-container{
+    height: 535px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Home-mainpage{
+    display: flex;
+    width: 90vw;
+    min-height: 400px;
+    max-width: 1200px;
+    margin-top: 90px;
+    margin-bottom: 10px;
+    background-color: #FB4C4C;
+    border-radius: 30px;
+    // border: 2px solid black;
+}
+
+.Home-firsthalf{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    // border:2px solid  red;
+    align-items: center;
+    justify-content: center;
+}
+
+.Home-content h1{
+    font-size: 4vw;
+    margin-bottom: 2vh;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-weight: lighter;
+    color: white;
+}
+
+.Home-content h2{
+    font-size: 1.5vw;
+    margin-bottom: 2vh;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}
+
+#booknowbtn{
+    background-color:white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: #FB4C4C;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5vw;
+    width: 20vw;
+    height: 55px;
+    border: none;
+    font-weight: bold;
+}
+
+#booknowbtn:hover{
+    background:#FB4C4C;
+    color: white;
+    border:2px solid #FB4C4C;
+    transition: 0.5s;
+}
+
+.Home-secondhalf{
+    flex: 1;
+    /* border: 2px solid yellow; */
+    background-image: url(../../Images/titleimg3.png);
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: 50% 50%;
+}
+
+.sharetab{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    height: 4vh;
+    justify-content: space-around;
+    color:#FB4C4C;
+}
+
+.bottomnavbar{
+    display: none;
+}
+
+@media (max-width:800px) {
+    .Home-mainpage{
+        flex-direction: column-reverse;
+        min-height: 500px;
+        margin-top: 15vh;
+    }
+    .Home-content h1{
+        font-size: 4vw;
+    }
+    .Home-content h2{
+        font-size: 2vw;
+    }
+    #booknowbtn{
+        font-size: 2vw;
+    }
+}
+
+@media (max-width:700px) {
+    .Home-content h1{
+        font-size: 5vw;
+    }
+    .Home-content h2{
+        font-size: 2.5vw;
+    }
+    #booknowbtn{
+        font-size: 2.5vw;
+        width: 25vw;
+    }
+}
+
+@media (max-width:500px) {
+    .Home-content h1{
+        font-size: 7vw;
+    }
+    .Home-content h2{
+        font-size: 3.5vw;
+    }
+    #booknowbtn{
+        font-size: 3.5vw;
+        width: 30vw;
+    }
+}
+
+@media (max-width:400px) {
+    .Home-content h1{
+        font-size: 9vw;
+    }
+    .Home-content h2{
+        font-size: 3vw;
+    }
+    #booknowbtn{
+        font-size: 5.5vw;
+        width: 50vw;
+    }
+}
+
+// @media (max-width:400px) and (max-height:900px) {
+//     .mainpage{
+//         max-height: 700px;
+//     }
+// }

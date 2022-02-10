@@ -1,0 +1,34 @@
+{
+    "markedlocations":[
+        {
+            "name":"Lokmanya Tilak college of Engineering",
+            "latitude":19.106021241115698,
+            "longitude":73.00751966822808
+        },
+        {
+            "name":"Lokmanya tilak international school",
+            "latitude":19.10798796899078,
+            "longitude": 73.00825995791872
+        },
+        {
+            "name":"Koparkhairane railway station",
+            "latitude":19.10272980767831,
+            "longitude": 73.0121863562436
+        },
+        {
+            "name":"New Life Maternity & Children's Hospital",
+            "latitude":19.11614147974548,
+            "longitude":73.00358767482028
+        },
+        {
+            "name":"Mpct Hospital",
+            "latitude":19.102391857139434, 
+            "longitude": 73.00726217612912
+        },
+        {
+            "name":"Mathadi Hospital Trust",
+            "latitude":19.10530145343438, 
+            "longitude": 73.00447267875558
+        }
+    ]
+}

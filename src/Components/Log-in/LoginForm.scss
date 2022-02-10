@@ -1,19 +1,29 @@
 .login-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.15);  
+  backdrop-filter: blur(5px);
 
-  .form-container {
+  .loginform-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    .form-control {
+    width: 40vw;
+    max-width: 450px;
+    margin:30px 50px;
+    padding: 50px;
+    background-color: white;
+
+    .loginform-control {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -23,26 +33,50 @@
       .login-labels {
         font-size: 25px;
       }
-      .form-input {
+      .loginform-input {
         width: 96%;
         height: 50px;
         padding: 0px 10px;
-        border-radius: 7px;
-        border: 1px solid rgb(93, 93, 201);
+        border: none;
+        border-radius: 0%;
+        // background: #fb4c4c;
         outline: none;
         margin: 10px 0px;
         font-size: 20px;
+        border: 1px solid #fb4c4c;
+      }
+
+      .loginform-input:focus{
+        border: 2px solid #fb4c4c;
       }
     }
     .login-btn {
-      width: 100%;
+      width: 40%;
       height: 50px;
-      border-radius: 7px;
-      margin: 10px 0px;
+      margin: 20px 0px;
       font-size: 20px;
-      outline: none;
-      background-color: rgb(99, 99, 206);
+      border: none;
+      background: #fb4c4c;
       color: white;
     }
   }
+}
+
+.login-container b{
+  font-size: 2.5vw;
+  margin-bottom: 10px;
+}
+.loginform-container h4{
+  font-size: 1vw;
+  margin-bottom: 30px;
+}
+
+.loginform-container a{
+  marginTop: 30px;
+  text-decoration: none;
+}
+
+::-webkit-input-placeholder{
+  color: black;
+  font-size: smaller;
 }
