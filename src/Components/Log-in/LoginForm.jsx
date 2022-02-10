@@ -4,17 +4,26 @@ import "./LoginForm.scss";
 import ReactDOM from 'react-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import Header from "../Header/header";
+import TextField from '@mui/material/TextField';
+import axios from "axios";
 
 const LoginForm = ({open,onchange,getprofile}) => {
   const [userLogin, setUserLogin] = useState();
   const [isUserLogged,setisUserLogged] = useState(false);
+  const [overlayopen,setoverlayopen] = useState(open);
 
+  const endpoint = '/login';
   // const history = useHistory();
   const handleSubmit = (e) => {
     // history.push("/secondpage");
     console.log(userLogin);
     getprofile();
     onchange(userLogin);
+
+    axios.post(endpoint,userLogin).then(res=>{
+      console.log(res);
+    })
+
     e.preventDefault();
   };
 
@@ -35,7 +44,19 @@ const LoginForm = ({open,onchange,getprofile}) => {
           {/* <label className="login-labels">Email Id</label> */}
           <input
             className="loginform-input"
-            name="emailId"
+            name="username"
+            type="Name"
+            onChange={(e) => {
+              handleChange(e);
+            }}
+            placeholder="Username"
+          />
+        </div>
+        <div className="loginform-control">
+          {/* <label className="login-labels">Email Id</label> */}
+          <input
+            className="loginform-input"
+            name="email"
             type="email"
             onChange={(e) => {
               handleChange(e);
