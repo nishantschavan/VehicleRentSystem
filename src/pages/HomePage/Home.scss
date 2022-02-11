@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .Home-mainpage{
@@ -91,11 +92,98 @@
     display: none;
 }
 
+.blockchain-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    h1{
+        font-weight: 600 ;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 4vw;
+    }
+    h3{
+        font-weight: lighter;
+    }
+    img{
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.blockchain-container{
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+.image-content{
+    height: 1000px;
+    background: url('../../Images/blockchainimg1.jpg');
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-color: red;
+    background-position: 30% 50%;
+    border-radius: 30px;
+}
+
+.stepsdiv{
+    position: absolute;
+    color: white;
+    h1{
+        font-family: 'Noto Serif', serif;
+        font-size: 11vw;
+        display: inline;
+    }
+    .indiv{
+        display: flex;
+        align-items: center;
+    }
+    .info{
+        h2{
+            font-size: 4vw;
+            font-family: 'Noto Serif', serif;
+        }
+        h4{
+            font-weight: lighter;
+            font-size: 2vw;
+        }
+    }
+}
+
+#stepsdiv1{
+    bottom:80vh;
+    left:10vh;
+}
+
+#stepsdiv2{
+    bottom:30vh;
+    right:10vh;
+}
+
+#stepsdiv3{
+    bottom:-20vh;
+    left:10vh;
+}
+
+#stepsdiv4{
+    bottom:-70vh;
+    right:10vh;
+}
+
+.projectmember{
+    background-color: green;
+}
+
 @media (max-width:800px) {
     .Home-mainpage{
         flex-direction: column-reverse;
         min-height: 500px;
-        margin-top: 15vh;
+        margin-top: 100px;
     }
     .Home-content h1{
         font-size: 4vw;

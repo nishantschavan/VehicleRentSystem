@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Form from "../Form/Form";
 import "./SignUp.scss";
+import axios from "axios";
 
 const SignUp = () => {
   const [error, setError] = useState(false);
@@ -13,13 +14,21 @@ const SignUp = () => {
     }
     return true;
   };
+
+  const endpoint = '/register';
+
   const handleSubmit = (e) => {
     console.log(data);
+
+    axios.post(endpoint,data).then(res=>{
+      console.log(res);
+    })
+
     e.preventDefault();
   };
+
   const handleChange = (target) => {
     const { name, value } = target;
-    console.log(target);
     setData({ ...data, [name]: value });
   };
 
@@ -32,7 +41,7 @@ const SignUp = () => {
         error={error}
         formLabel={[
           {
-            name: "fullname",
+            name: "username",
             label: "Name",
             type: "text",
             placeholder: "enter your name",
@@ -41,17 +50,17 @@ const SignUp = () => {
             },
             required: true,
           },
-          {
-            name: "contact_info",
-            label: "Contact",
-            type: "number",
-            placeholder: "contact number",
-            handleChange: (target) => {
-              // checkNumber(target.value);
-              handleChange(target);
-            },
-            required: true,
-          },
+          // {
+          //   name: "contact_info",
+          //   label: "Contact",
+          //   type: "number",
+          //   placeholder: "contact number",
+          //   handleChange: (target) => {
+          //     // checkNumber(target.value);
+          //     handleChange(target);
+          //   },
+          //   required: true,
+          // },
           {
             name: "email",
             label: "Email Id",
@@ -72,16 +81,16 @@ const SignUp = () => {
             },
             required: true,
           },
-          {
-            name: "re_password",
-            label: "Re-enter password",
-            type: "password",
-            placeholder: "re-create password",
-            handleChange: (target) => {
-              handleChange(target);
-            },
-            required: true,
-          },
+          // {
+          //   name: "re_password",
+          //   label: "Re-enter password",
+          //   type: "password",
+          //   placeholder: "re-create password",
+          //   handleChange: (target) => {
+          //     handleChange(target);
+          //   },
+          //   required: true,
+          // },
           {
             name: "confirm btn",
             label: "",
