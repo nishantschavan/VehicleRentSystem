@@ -3,15 +3,7 @@ import SignUp from "../../Components/Sign-up/SignUp";
 
 const SignUpPage = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItem: "center",
-        width: "100%",
-      }}
-    >
+    <div className="signUp-wrapper">
       <SignUp />
     </div>
   );

@@ -15,14 +15,14 @@ const SignUp = () => {
     return true;
   };
 
-  const endpoint = '/register';
+  const endpoint = "/register";
 
   const handleSubmit = (e) => {
     console.log(data);
 
-    axios.post(endpoint,data).then(res=>{
+    axios.post(endpoint, data).then((res) => {
       console.log(res);
-    })
+    });
 
     e.preventDefault();
   };
@@ -34,8 +34,9 @@ const SignUp = () => {
 
   return (
     <div className="signUp-container">
-      <h1>Sign Up here 🚀</h1>
+      <h1 className="sign-up-header">Sign Up here 🚀</h1>
       <Form
+        className="form-wrapper"
         onSubmit={handleSubmit}
         checkNumber={checkNumber}
         error={error}
@@ -50,17 +51,7 @@ const SignUp = () => {
             },
             required: true,
           },
-          // {
-          //   name: "contact_info",
-          //   label: "Contact",
-          //   type: "number",
-          //   placeholder: "contact number",
-          //   handleChange: (target) => {
-          //     // checkNumber(target.value);
-          //     handleChange(target);
-          //   },
-          //   required: true,
-          // },
+
           {
             name: "email",
             label: "Email Id",

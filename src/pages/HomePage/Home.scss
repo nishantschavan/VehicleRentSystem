@@ -1,239 +1,232 @@
-*{
-    margin:0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.Home-container{
-    height: 535px;
-    width: 100vw;
+.Home-container {
+  // height: 535px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px auto 30px auto;
+}
+
+.Home-mainpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  min-height: 400px;
+
+  margin-top: 90px;
+  margin-bottom: 10px;
+  background-color: #fb4c4c;
+  border-radius: 20px;
+
+  .Home-firsthalf {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.Home-mainpage{
-    display: flex;
-    width: 90vw;
-    min-height: 400px;
-    max-width: 1200px;
-    margin-top: 90px;
-    margin-bottom: 10px;
-    background-color: #FB4C4C;
-    border-radius: 30px;
-    // border: 2px solid black;
-}
-
-.Home-firsthalf{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    // border:2px solid  red;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
+    .label-1 {
+      font-family: "Mochiy Pop P One", sans-serif;
+      font-weight: lighter;
+      color: white;
+      margin: 10px;
+      font-size: 25px;
+    }
+    .label-2 {
+      font-family: "Roboto Mono", monospace;
+      color: white;
+      margin: 10px;
+    }
+  }
+  .Home-secondhalf {
+    padding: 0px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 }
 
-.Home-content h1{
-    font-size: 4vw;
-    margin-bottom: 2vh;
-    font-family: 'Mochiy Pop P One', sans-serif;
-    font-weight: lighter;
-    color: white;
-}
-
-.Home-content h2{
-    font-size: 1.5vw;
-    margin-bottom: 2vh;
-    font-family: 'Roboto Mono', monospace;
-    color: white;
-}
-
-#booknowbtn{
-    background-color:white;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    color: #FB4C4C;
-    text-decoration: none;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.5vw;
-    width: 20vw;
-    height: 55px;
-    border: none;
-    font-weight: bold;
-}
-
-#booknowbtn:hover{
-    background:#FB4C4C;
-    color: white;
-    border:2px solid #FB4C4C;
+.book-now-btn {
+  background-color: #ffb703;
+  //   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
+  width: 20vw;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 10px;
+  &:hover {
+    background-color: #ffb8037e;
+    border: 2px solid #fb4c4c;
     transition: 0.5s;
+  }
 }
 
-.Home-secondhalf{
-    flex: 1;
-    /* border: 2px solid yellow; */
-    background-image: url(../../Images/titleimg3.png);
-    background-size: contain;
-    background-repeat: no-repeat; 
-    background-position: 50% 50%;
+.sharetab {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+
+  height: 4vh;
+  color: #fb4c4c;
 }
 
-.sharetab{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 30%;
-    height: 4vh;
-    justify-content: space-around;
-    color:#FB4C4C;
+.bottomnavbar {
+  display: none;
 }
 
-.bottomnavbar{
-    display: none;
+.blockchain-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  h1 {
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    font-size: 4vw;
+  }
+  h3 {
+    font-weight: lighter;
+  }
+  img {
+    height: 50px;
+    width: 50px;
+  }
 }
 
-.blockchain-heading{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    h1{
-        font-weight: 600 ;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 4vw;
-    }
-    h3{
-        font-weight: lighter;
-    }
-    img{
-        height: 50px;
-        width: 50px;
-    }
-}
-
-.blockchain-container{
-    width: 100vw;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    color: white;
-}
-
-.image-content{
-    height: 1000px;
-    background: url('../../Images/blockchainimg1.jpg');
-    background-size:cover ;
-    background-repeat: no-repeat;
-    background-color: red;
-    background-position: 30% 50%;
-    border-radius: 30px;
-}
-
-.stepsdiv{
+.blockchain-container {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  .stepsdiv {
     position: absolute;
     color: white;
-    h1{
-        font-family: 'Noto Serif', serif;
-        font-size: 11vw;
-        display: inline;
+    h1 {
+      font-family: "Noto Serif", serif;
+      font-size: 11vw;
+      display: inline;
     }
-    .indiv{
-        display: flex;
-        align-items: center;
+    .indiv {
+      display: flex;
+      align-items: center;
     }
-    .info{
-        h2{
-            font-size: 4vw;
-            font-family: 'Noto Serif', serif;
-        }
-        h4{
-            font-weight: lighter;
-            font-size: 2vw;
-        }
-    }
-}
-
-#stepsdiv1{
-    bottom:80vh;
-    left:10vh;
-}
-
-#stepsdiv2{
-    bottom:30vh;
-    right:10vh;
-}
-
-#stepsdiv3{
-    bottom:-20vh;
-    left:10vh;
-}
-
-#stepsdiv4{
-    bottom:-70vh;
-    right:10vh;
-}
-
-.projectmember{
-    background-color: green;
-}
-
-@media (max-width:800px) {
-    .Home-mainpage{
-        flex-direction: column-reverse;
-        min-height: 500px;
-        margin-top: 100px;
-    }
-    .Home-content h1{
+    .info {
+      h2 {
         font-size: 4vw;
-    }
-    .Home-content h2{
+        font-family: "Noto Serif", serif;
+      }
+      h4 {
+        font-weight: lighter;
         font-size: 2vw;
+      }
     }
-    #booknowbtn{
-        font-size: 2vw;
-    }
+  }
 }
 
-@media (max-width:700px) {
-    .Home-content h1{
-        font-size: 5vw;
-    }
-    .Home-content h2{
-        font-size: 2.5vw;
-    }
-    #booknowbtn{
-        font-size: 2.5vw;
-        width: 25vw;
-    }
+.image-content {
+  height: 1000px;
+  background: url("../../Images/blockchainimg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: red;
+  background-position: 30% 50%;
+  border-radius: 10px;
 }
 
-@media (max-width:500px) {
-    .Home-content h1{
-        font-size: 7vw;
-    }
-    .Home-content h2{
-        font-size: 3.5vw;
-    }
-    #booknowbtn{
-        font-size: 3.5vw;
-        width: 30vw;
-    }
+#stepsdiv1 {
+  bottom: 80vh;
+  left: 10vh;
 }
 
-@media (max-width:400px) {
-    .Home-content h1{
-        font-size: 9vw;
-    }
-    .Home-content h2{
-        font-size: 3vw;
-    }
-    #booknowbtn{
-        font-size: 5.5vw;
-        width: 50vw;
-    }
+#stepsdiv2 {
+  bottom: 30vh;
+  right: 10vh;
 }
+
+#stepsdiv3 {
+  bottom: -20vh;
+  left: 10vh;
+}
+
+#stepsdiv4 {
+  bottom: -70vh;
+  right: 10vh;
+}
+
+.projectmember {
+  background-color: green;
+}
+
+// @media (max-width: 800px) {
+//   .Home-mainpage {
+//     flex-direction: column-reverse;
+//     // min-height: 500px;
+//     margin-top: 100px;
+//   }
+//   .Home-content h1 {
+//     font-size: 4vw;
+//   }
+//   .Home-content h2 {
+//     font-size: 2vw;
+//   }
+//   #booknowbtn {
+//     font-size: 2vw;
+//   }
+// }
+
+// @media (max-width: 700px) {
+//   .Home-content h1 {
+//     font-size: 5vw;
+//   }
+//   .Home-content h2 {
+//     font-size: 2.5vw;
+//   }
+//   #booknowbtn {
+//     font-size: 2.5vw;
+//     width: 25vw;
+//   }
+// }
+
+// @media (max-width: 500px) {
+//   .Home-content h1 {
+//     font-size: 7vw;
+//   }
+//   .Home-content h2 {
+//     font-size: 3.5vw;
+//   }
+//   #booknowbtn {
+//     font-size: 3.5vw;
+//     width: 30vw;
+//   }
+// }
+
+// @media (max-width: 400px) {
+//   .Home-content h1 {
+//     font-size: 9vw;
+//   }
+//   .Home-content h2 {
+//     font-size: 3vw;
+//   }
+//   #booknowbtn {
+//     font-size: 5.5vw;
+//     width: 50vw;
+//   }
+// }
 
 // @media (max-width:400px) and (max-height:900px) {
 //     .mainpage{

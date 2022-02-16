@@ -4,11 +4,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5px;
-  border: 2px solid red;
+
+  // background-color: #e9d8a6;
+  height: 100vh;
+  .sign-up-header {
+    background-color: #98f5e1;
+    border-bottom: 1px solid gray;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-wrapper {
+    width: 100%;
+  }
 }
 
-.signUp-container form{
-  width: 50%;
-}
-
+// .signUp-container form {
+//   width: 50%;
+// }
