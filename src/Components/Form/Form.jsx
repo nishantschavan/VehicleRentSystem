@@ -13,7 +13,7 @@ const Form = (props) => {
             </label>
 
             <input
-              className={`form-input`}
+              className={`form-input ${type === "submit" ? "submit-btn" : ""}`}
               name={name}
               type={type}
               placeholder={placeholder}

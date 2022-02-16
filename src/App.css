@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Comfortaa:wght@300;400&family=Merriweather&family=Mochiy+Pop+P+One&family=Noto+Serif:wght@400;700&family=Open+Sans:wght@300;400&family=Roboto+Mono:wght@300&display=swap');
-.app{
-    height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Comfortaa:wght@300;400&family=Merriweather&family=Mochiy+Pop+P+One&family=Noto+Serif:wght@400;700&family=Open+Sans:wght@300;400&family=Roboto+Mono:wght@300&display=swap");
+.app {
+  height: 100vh;
 }
 
 /* .bubble{
