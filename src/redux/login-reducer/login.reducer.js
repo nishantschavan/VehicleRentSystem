@@ -1,6 +1,6 @@
 import { LOGIN } from "../constants";
 const InitialState = {
-  loginState: false,
+  loginStatus: false,
 };
 
 const LoginReducer = (state = InitialState, action) => {
@@ -8,7 +8,8 @@ const LoginReducer = (state = InitialState, action) => {
     case LOGIN:
       return {
         ...state,
-        loginState: true,
+        loginStatus: true,
+        userData: action.payload,
       };
     default:
       return state;

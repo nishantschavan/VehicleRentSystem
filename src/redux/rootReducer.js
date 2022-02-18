@@ -3,7 +3,7 @@ import LoginReducer from "./login-reducer/login.reducer";
 
 const rootReducer = combineReducers({
   loginIn: LoginReducer,
-  // SignUp : ,
+  SignUp : ,
 });
 
 export default rootReducer;

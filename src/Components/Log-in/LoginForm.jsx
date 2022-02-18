@@ -1,28 +1,36 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./LoginForm.scss";
-import ReactDOM from 'react-dom';
-import CloseIcon from '@mui/icons-material/Close';
+import ReactDOM from "react-dom";
+import CloseIcon from "@mui/icons-material/Close";
 import Header from "../Header/header";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { loginAction } from "../../redux/login-reducer/login.action";
 
-const LoginForm = ({open,onchange,getprofile}) => {
+const LoginForm = ({ open, onchange, getprofile }) => {
   const [userLogin, setUserLogin] = useState();
-  const [isUserLogged,setisUserLogged] = useState(false);
-  const [overlayopen,setoverlayopen] = useState(open);
+  const [isUserLogged, setisUserLogged] = useState(false);
+  const [overlayopen, setoverlayopen] = useState(open);
+  const dispatch = useDispatch();
 
-  const endpoint = '/login';
+  const endpoint = "/login";
   // const history = useHistory();
   const handleSubmit = (e) => {
     // history.push("/secondpage");
-    console.log(userLogin);
-    getprofile();
-    onchange(userLogin);
 
-    axios.post(endpoint,userLogin).then(res=>{
-      console.log(res);
-    })
+    // action loginAction
+
+    dispatch(loginAction(userLogin));
+
+    console.log("this is on submit", userLogin);
+    // getprofile();
+    // onchange(userLogin);
+
+    // axios.post(endpoint, userLogin).then((res) => {
+    //   console.log(res);
+    // });
 
     e.preventDefault();
   };
@@ -32,7 +40,7 @@ const LoginForm = ({open,onchange,getprofile}) => {
     setUserLogin({ ...userLogin, [name]: value });
   };
 
-  if (!open) return null
+  if (!open) return null;
 
   return ReactDOM.createPortal(
     <div className="login-container">
@@ -76,11 +84,13 @@ const LoginForm = ({open,onchange,getprofile}) => {
             placeholder="password"
           />
         </div>
-        <button type="submit" className="login-btn">Login</button>
+        <button type="submit" className="login-btn">
+          Login
+        </button>
         <Link to={"/signUp"}>Don’t have an account ?</Link>
       </form>
     </div>,
-    document.getElementById('overlay')
+    document.getElementById("overlay")
   );
 };
 

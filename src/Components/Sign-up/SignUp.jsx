@@ -3,8 +3,11 @@ import { useState } from "react";
 import Form from "../Form/Form";
 import "./SignUp.scss";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { signupAction } from "../../redux/sign-up-reducer/signup.action";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
   const [error, setError] = useState(false);
   const [data, setData] = useState();
   const checkNumber = (value) => {
@@ -19,10 +22,11 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     console.log(data);
+    dispatch(signupAction(data));
 
-    axios.post(endpoint, data).then((res) => {
-      console.log(res);
-    });
+    // axios.post(endpoint, data).then((res) => {
+    //   console.log(res);
+    // });
 
     e.preventDefault();
   };
