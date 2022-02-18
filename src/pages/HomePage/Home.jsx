@@ -59,23 +59,25 @@ const Home = ()=>{
             </div>
         </div>
 
-        {/* <RellaxWrapper speed={-2} zIndex={2}> */}
-            <div className="blockchain-heading">
-                <img src={blockicon} alt="" />
-                <h1>Blockchain Secured Transactions</h1>
-                <h3>Follow below steps to get easily use Application</h3>
-            </div>
+        {/* <RellaxWrapper speed={-5} zIndex={2}> */}
+                <div className="blockchain-heading">
+                    <img src={blockicon} alt="" />
+                    <h1>Blockchain Secured Transactions</h1>
+                    <h3>Follow below steps to get easily use Application</h3>
+                </div>
         {/* </RellaxWrapper> */}
 
         <div className="blockchain-container">
+
             <div className="stepsdiv" id='stepsdiv1'>
                 <RellaxWrapper speed={3} zIndex={2}>
                     <div className='indiv'>
                         <h1 id='number'>1: </h1>
                         <div className="info">
                             <h2>Book your locations</h2>
-                            <h4>Start location</h4>
-                            <h4>End location</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                <br /> Doloremque temporibus, amet, tempora sint sequi nam,
+                                <br /> praesentium adipisci ex dolores necessitatibus autem at blanditiis voluptatibus quae.</p>
                         </div>
                     </div>
                 </RellaxWrapper>
@@ -87,7 +89,9 @@ const Home = ()=>{
                         <h1 id='number'>2: </h1>
                         <div className="info">
                             <h2>Scan vehicle QR code</h2>
-                            <h4>Scan and unlock</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                <br /> Doloremque temporibus, amet, tempora sint sequi nam,
+                                <br /> praesentium adipisci ex dolores necessitatibus autem at blanditiis voluptatibus quae.</p>
                         </div>
                     </div>
                 </RellaxWrapper>
@@ -99,7 +103,9 @@ const Home = ()=>{
                         <h1 id='number'>3: </h1>
                         <div className="info">
                             <h2>Deposit some amount</h2>
-                            <h4>It will return after ride completion</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                <br /> Doloremque temporibus, amet, tempora sint sequi nam,
+                                <br /> praesentium adipisci ex dolores necessitatibus autem at blanditiis voluptatibus quae.</p>
                         </div>
                     </div>
                 </RellaxWrapper>
@@ -111,8 +117,9 @@ const Home = ()=>{
                         <h1 id='number'>4: </h1>
                         <div className="info">
                             <h2>Park vehicle on stand</h2>
-                            <h4>Lock vehicle neatly.</h4>
-                            <h4>Get deposit back</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                <br /> Doloremque temporibus, amet, tempora sint sequi nam,
+                                <br /> praesentium adipisci ex dolores necessitatibus autem at blanditiis voluptatibus quae.</p>
                         </div>
                     </div>
                 </RellaxWrapper>

@@ -26,7 +26,7 @@ const Booknowpage4 = () =>{
                 <div className="firsthalf">
                     <div className="content">
                         <h2>Unlock vehicle</h2>
-                        <h1>Vehicle Unlocked <br/> Sucessfully!</h1>
+                        <h1>Vehicle Unlocked Sucessfully!</h1>
                         <div className="btnflex">
                             <button className={bgcolor} onClick={changecolor}>Unlock</button>
                             <button className={appearbtn} onClick={navigateTo}>Next</button>

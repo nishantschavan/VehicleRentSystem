@@ -9,6 +9,7 @@ import Stepsbar from "../../Components/Stepsbar/Stepsbar";
 import { useHistory } from 'react-router-dom';
 import * as locations from '../../locations.json';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useEffect } from "react";
 
 const Booknowpage1 = () => {
 
@@ -23,9 +24,15 @@ const Booknowpage1 = () => {
     const [isStart,setisStart] = useState(false);
     const [selectEndTextbox,setSelectEndTextbox] = useState(null);
     const [isEnd,setisEnd] = useState(false);
+    const [error,seterror] = useState("");
 
     const history = useHistory();
-    const navigateTo = () => history.push('/Booknowpage2');
+    const navigateTo = () => {
+        if(selectStartTextbox==null || selectEndTextbox==null){
+            seterror("Enter all field properly.");
+        }
+        else {history.push('/Booknowpage2');}
+    }
 
     const handlestartclick = ()=>{
         setisStart(true);
@@ -45,6 +52,7 @@ const Booknowpage1 = () => {
                         <h2>Select Vehicle and Destination</h2>
                         <input type="text" id="textbox" placeholder="Start Destination" onClick={handlestartclick} value={selectStartTextbox}></input>
                         <input type="text" id="textbox" placeholder="End Destination" onClick={handleendclick} value={selectEndTextbox}></input>
+                        <p>{error}</p>
                         <button id="nextbtn" onClick={navigateTo}><h3>Next</h3><ArrowForwardIcon /> </button>
                     </div>
                 </div>
