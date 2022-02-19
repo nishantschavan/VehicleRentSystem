@@ -23,7 +23,7 @@ const Booknowpage3 = ()=>{
     return(
         <div className="container">
             <Header/>
-            <Stepsbar/>
+            <Stepsbar activesteps={3}/>
             <div className="mainpage">
                 <div className="firsthalf">
                     <div className="content">

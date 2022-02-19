@@ -15,11 +15,11 @@ const Booknowpage5 = ()=> {
     return(
         <div className="container">
             <Header/>
-            <Stepsbar/>
+            <Stepsbar activesteps={5}/>
             <div className="mainpage">
                 <div className="firsthalf">
                     <div className="content">
-                        <h1>Enjoy your Ride !</h1>
+                        <h1>Enjoy your Ride successfully!</h1>
                         <button className="sendbtn" onClick={navigateTo}>Go to home</button>
                     </div>
                 </div>

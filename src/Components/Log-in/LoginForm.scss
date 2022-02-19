@@ -1,59 +1,83 @@
 .login-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.15);  
+  backdrop-filter: blur(5px);
 
-  .form-container {
+  .loginform-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
+    width: 35vw;
+    max-width: 450px;
+    margin:30px 50px;
+    padding: 30px 50px;
+    background-color: white;
+    border: 2px solid blue;
 
-    .form-control {
+    @media (max-width:800px) {
+        width: 40vw;
+    }
+
+    .loginform-control {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      border: none;
+      border: 2px solid orange;
       width: 100%;
       .login-labels {
         font-size: 25px;
       }
-      .form-input {
-        width: 96%;
-        height: 50px;
-        padding: 0px 10px;
-        border: none;
-        border-radius: 0%;
-        background: rgba(248, 212, 112, 0.37);
+      .loginform-input {
+        width: 100%;
+        height: 45px;
         outline: none;
         margin: 10px 0px;
         font-size: 20px;
+        border: 1px solid #fb4c4c;
+      }
+
+      ::-webkit-input-placeholder{
+        color: rgba(0, 0, 0, 0.46);
+        padding-left: 15px;
+        
+      }
+      .loginform-input:focus{
+        border: 2px solid #fb4c4c;
       }
     }
     .login-btn {
-      width: 100%;
-      height: 50px;
+      width: 40%;
+      height: 45px;
       margin: 10px 0px;
       font-size: 20px;
-      outline: none;
-      background: #835956;
+      border: none;
+      background: #fb4c4c;
       color: white;
     }
   }
 }
 
-.form-container h4{
-  font-size: large;
-  margin-bottom: 30px;
+.login-container b{
+  font-size: 2.5vw;
+  margin-bottom: 10px;
+}
+.loginform-container h4{
+  font-size: 1vw;
+  margin-bottom: 20px;
 }
 
-.form-container a{
+.loginform-container a{
   marginTop: 30px;
   text-decoration: none;
 }
@@ -62,3 +86,4 @@
   color: black;
   font-size: smaller;
 }
+

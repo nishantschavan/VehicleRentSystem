@@ -9,8 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 90px;
     overflow: auto;
+    overflow-y: hidden;
 }
 
 .Stepsbar-container{
@@ -23,13 +24,14 @@
 }
 
 .circle{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background: #FB4C4C;
     border-radius: 50%;
     display:flex;
     align-items: center;
     justify-content: center;
+    opacity: 50%;
 }
 .circle h4{
     color: white;
@@ -41,6 +43,7 @@
     background: #FB4C4C;
     margin-left: 0.5vw;
     margin-right: 0.5vw;
+    opacity: 50%;
 }
 
 @media (max-width:1000px) {
