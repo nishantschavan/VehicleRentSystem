@@ -53,7 +53,7 @@ const Booknowpage1 = () => {
                         <input type="text" id="textbox" placeholder="Start Destination" onClick={handlestartclick} value={selectStartTextbox}></input>
                         <input type="text" id="textbox" placeholder="End Destination" onClick={handleendclick} value={selectEndTextbox}></input>
                         <p>{error}</p>
-                        <button id="nextbtn" onClick={navigateTo}><h3>Next</h3><ArrowForwardIcon /> </button>
+                        <button id="nextbtn" onClick={navigateTo}><h3>Next</h3><ArrowForwardIcon className="mui-icon" /> </button>
                     </div>
                 </div>
                 <div className="booknowpage1-secondhalf">
@@ -83,7 +83,7 @@ const Booknowpage1 = () => {
                                             setSelectEndTextbox(mark.name);
                                             setisEnd(false);
                                         }
-                                    }}><DeliveryDiningIcon /></button>
+                                    }}><DeliveryDiningIcon className="mui-icon" /></button>
                                 </Marker>
                             ))}
 

@@ -1,15 +1,17 @@
 import React from 'react'
 import './Home.scss';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import MailIcon from '@mui/icons-material/Mail';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import Header from '../../Components/Header/header';
 import { useHistory } from 'react-router-dom';
 import {ReactBasicScroll} from "react-basic-scroll";
 import { RellaxWrapper } from 'react-rellax-wrapper'
 import blockicon from '../../Images/blockchain.png';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import MailIcon from '@mui/icons-material/Mail';
+
 
 const Home = ()=>{
 
@@ -23,7 +25,7 @@ const Home = ()=>{
             '--width': {
                 from: '50vw',
                 to: '110vw'
-            }
+            },
         }
     };
 
@@ -51,11 +53,11 @@ const Home = ()=>{
             </div>
             <div class="sharetab">
                 <h4>Share</h4>
-                <FacebookIcon/>
-                <WhatsAppIcon/>
-                <InstagramIcon />
-                <TwitterIcon />
-                <MailIcon />
+                <WhatsAppIcon className="mui-icon" />
+                <FacebookIcon className="mui-icon" />
+                <TwitterIcon className="mui-icon" />
+                <InstagramIcon className="mui-icon" />
+                <MailIcon className="mui-icon" />
             </div>
         </div>
 
@@ -130,8 +132,48 @@ const Home = ()=>{
             </ReactBasicScroll>
             
         </div>
-        <div className="projectmember">
 
+        <div className="projectmember">
+            <div className="projectmember-heading">
+                <h1>Meet Our Team</h1>
+            </div>
+        
+            <div className="row">
+                <div className="cards">
+                    <div className="rectphoto" id='akshatphoto'></div>
+                    <h2>Akshat Shirsat</h2>
+                    <h3>(Group Leader)</h3>
+                    <h4>nishantscg@gmail.com</h4>
+                    <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
+                </div>
+                <div className="cards">
+                    <div className="rectphoto" id='nishantphoto'></div>
+                    <h2>Akshat Shirsat</h2>
+                    <h3>(Group Leader)</h3>
+                    <h4>nishantscg@gmail.com</h4>
+                    <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
+                </div>
+                <div className="cards">
+                    <div className="rectphoto" id='rahulphoto'></div>
+                    <h2>Akshat Shirsat</h2>
+                    <h3>(Group Leader)</h3>
+                    <h4>nishantscg@gmail.com</h4>
+                    <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
+                </div>
+                <div className="cards">
+                    <div className="rectphoto" id='giribabuphoto'></div>
+                    <h2>Akshat Shirsat</h2>
+                    <h3>(Group Leader)</h3>
+                    <h4>nishantscg@gmail.com</h4>
+                    <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
+                </div>
+            </div>
+
+            <div className="more-details">
+                <h4>Project Guide : Mr. Vaibhav palav sir</h4>
+                <h5>Project source code : <a href="https://github.com/R-A-N-G">https://github.com/R-A-N-G</a></h5>
+                <h5 id='footer'>LTCE College Final year Bachelor of Engineering project (batch 21-22)</h5>
+            </div>
         </div>
         </>
     )

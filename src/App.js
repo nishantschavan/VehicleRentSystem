@@ -9,6 +9,7 @@ import Booknowpage3 from "./pages/Booknowpage3/Booknowpage3";
 import Booknowpage4 from "./pages/Booknowpage4/Booknowpage4";
 import Booknowpage5 from "./pages/Booknowpage5/Booknowpage5";
 import QrCode from "./pages/Qrcode/QrCode";
+import Finalpage from "./pages/Final-page/Finalpage";
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
       </Route>
       <Route exact path="/scanqr">
         <QrCode />
+      </Route>
+      <Route exact path="/finalpage">
+        <Finalpage />
       </Route>
     </div>
   );

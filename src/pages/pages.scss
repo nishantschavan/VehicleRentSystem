@@ -151,6 +151,10 @@
     justify-content: center;
 }
 
+.mui-icon{
+    position: static !important;
+}
+
 @media (max-width:800px) {
     .mainpage{
         flex-direction: column-reverse;

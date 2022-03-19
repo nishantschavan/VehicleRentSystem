@@ -10,7 +10,7 @@ import {useHistory} from 'react-router-dom';
 const Booknowpage5 = ()=> {
 
     const history = useHistory();
-    const navigateTo = () => history.push('/');
+    const navigateTo = () => history.push('/finalpage');
 
     return(
         <div className="container">
@@ -20,7 +20,7 @@ const Booknowpage5 = ()=> {
                 <div className="firsthalf">
                     <div className="content">
                         <h1>Enjoy your Ride successfully!</h1>
-                        <button className="sendbtn" onClick={navigateTo}>Go to home</button>
+                        <button className="sendbtn" onClick={navigateTo}>Done</button>
                     </div>
                 </div>
                 <div className="booknowpage5-secondhalf"></div>
