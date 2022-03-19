@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Form from "../Form/Form";
 import "./SignUp.scss";
-import axios from "axios";
+
 import { useDispatch } from "react-redux";
 import { signupAction } from "../../redux/sign-up-reducer/signup.action";
 
@@ -18,17 +18,10 @@ const SignUp = () => {
     return true;
   };
 
-  const endpoint = "/register";
-
   const handleSubmit = (e) => {
-    console.log(data);
-    dispatch(signupAction(data));
-
-    // axios.post(endpoint, data).then((res) => {
-    //   console.log(res);
-    // });
-
     e.preventDefault();
+    console.log("sign up data", data);
+    dispatch(signupAction(data));
   };
 
   const handleChange = (target) => {
@@ -41,7 +34,7 @@ const SignUp = () => {
       <h1 className="sign-up-header">Sign Up here 🚀</h1>
       <Form
         className="form-wrapper"
-        onSubmit={handleSubmit}
+        onSubmit={(e) => handleSubmit(e)}
         checkNumber={checkNumber}
         error={error}
         formLabel={[
@@ -76,16 +69,7 @@ const SignUp = () => {
             },
             required: true,
           },
-          // {
-          //   name: "re_password",
-          //   label: "Re-enter password",
-          //   type: "password",
-          //   placeholder: "re-create password",
-          //   handleChange: (target) => {
-          //     handleChange(target);
-          //   },
-          //   required: true,
-          // },
+
           {
             name: "confirm btn",
             label: "",

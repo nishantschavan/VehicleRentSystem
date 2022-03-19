@@ -14,10 +14,9 @@ const LoginForm = ({ open, onchange, getprofile }) => {
   const [isUserLogged, setisUserLogged] = useState(false);
   const [overlayopen, setoverlayopen] = useState(open);
   const dispatch = useDispatch();
-
-  const endpoint = "/login";
   // const history = useHistory();
   const handleSubmit = (e) => {
+    e.preventDefault();
     // history.push("/secondpage");
 
     // action loginAction
@@ -31,8 +30,6 @@ const LoginForm = ({ open, onchange, getprofile }) => {
     // axios.post(endpoint, userLogin).then((res) => {
     //   console.log(res);
     // });
-
-    e.preventDefault();
   };
 
   const handleChange = (e) => {
