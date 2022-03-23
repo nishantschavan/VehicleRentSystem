@@ -11,12 +11,16 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MailIcon from '@mui/icons-material/Mail';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useSelector } from 'react-redux';
 
 
 const Home = ()=>{
 
+    const loginstate = useSelector(state => state.loginIn)
+
     const history = useHistory();
-    const navigateTo = () => history.push('/Booknowpage1');
+    const navigateTo = () => {if(loginstate.loginStatus) history.push('/Booknowpage1')};
 
     const config = {
         from: 'top-bottom',
@@ -31,9 +35,9 @@ const Home = ()=>{
 
     return(
         <>
-        <div class="Home-container">
-            <div class="bottomnavbar">
-                <div class="navtoggle">
+        <div className="Home-container">
+            <div className="bottomnavbar">
+                <div className="navtoggle">
                     <a href="">Home</a>
                     <a href="">Dashboard</a>
                     <a href="">Profile</a>
@@ -41,17 +45,17 @@ const Home = ()=>{
                 </div>
             </div>
             <Header/>
-            <div class="Home-mainpage">
-                <div class="Home-firsthalf">
-                    <div class="Home-content">
+            <div className="Home-mainpage">
+                <div className="Home-firsthalf">
+                    <div className="Home-content">
                         <h1 id='frontpage-heading'>Always &nbsp;a &nbsp;ride <br/> where you want</h1>
                         <h2 id='frontpage-subheading'>Self auto service for near travelling</h2>
                         <button id="booknowbtn" onClick={navigateTo}>Book now</button>
                     </div>
                 </div>
-                <div class="Home-secondhalf"></div>
+                <div className="Home-secondhalf"></div>
             </div>
-            <div class="sharetab">
+            <div className="sharetab">
                 <h4>Share</h4>
                 <WhatsAppIcon className="mui-icon" />
                 <FacebookIcon className="mui-icon" />
@@ -65,7 +69,7 @@ const Home = ()=>{
                 <div className="blockchain-heading">
                     <img src={blockicon} alt="" />
                     <h1>Blockchain Secured Transactions</h1>
-                    <h3>Follow below steps to get easily use Application</h3>
+                    <h3>Follow things offered by our platform by using blockchain to users</h3>
                 </div>
         {/* </RellaxWrapper> */}
 
@@ -76,10 +80,10 @@ const Home = ()=>{
                     <div className='indiv'>
                         <h1 id='number'>1: </h1>
                         <div className="info">
-                            <h2>Book your locations</h2>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                <br /> Doloremque temporibus, amet, tempora sint sequi nam,
-                                <br /> praesentium adipisci ex dolores necessitatibus autem at blanditiis voluptatibus quae.</p>
+                            <h2>Enhanced Security</h2>
+                            <p>Blockchain technology utilizes advanced security compared to other platforms or record-keeping systems.
+                                <br /> Any transactions that are ever recorded needs to be agreed upon according to the consensus method. 
+                                <br /> Also, each transaction is encrypted and has a proper link to the old transaction using a hashing method.</p>
                         </div>
                     </div>
                 </RellaxWrapper>
@@ -90,10 +94,11 @@ const Home = ()=>{
                     <div className='indiv'>
                         <h1 id='number'>2: </h1>
                         <div className="info">
-                            <h2>Scan vehicle QR code</h2>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                <br /> Doloremque temporibus, amet, tempora sint sequi nam,
-                                <br /> praesentium adipisci ex dolores necessitatibus autem at blanditiis voluptatibus quae.</p>
+                            <h2>Reduced costs</h2>
+                            <p>By using blockchain, organizations can bring down a lot of costs associated with 3rd party vendors.
+                                <br /> As blockchain has no inherited centralized player, there is no need to pay for any vendor costs.
+                                <br /> On top of that, there is less interaction needed when it comes to validating a transaction,
+                                <br /> further removing the need to spend money or time to do basic stuff.</p>
                         </div>
                     </div>
                 </RellaxWrapper>
@@ -104,10 +109,10 @@ const Home = ()=>{
                     <div className='indiv'>
                         <h1 id='number'>3: </h1>
                         <div className="info">
-                            <h2>Deposit some amount</h2>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                <br /> Doloremque temporibus, amet, tempora sint sequi nam,
-                                <br /> praesentium adipisci ex dolores necessitatibus autem at blanditiis voluptatibus quae.</p>
+                            <h2>Better transparancy</h2>
+                            <p>With blockchain, an organization can go for a complete decentralized network where
+                                <br /> there is no need for a centralized authority, improving the system’s transparency.
+                                <br /> A blockchain consists of peers who are responsible for carrying out transactions and validating them.</p>
                         </div>
                     </div>
                 </RellaxWrapper>
@@ -118,10 +123,11 @@ const Home = ()=>{
                     <div className='indiv'>
                         <h1 id='number'>4: </h1>
                         <div className="info">
-                            <h2>Park vehicle on stand</h2>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                <br /> Doloremque temporibus, amet, tempora sint sequi nam,
-                                <br /> praesentium adipisci ex dolores necessitatibus autem at blanditiis voluptatibus quae.</p>
+                            <h2>Consensus mechanism</h2>
+                            <p>Consensus algorithms in blockchain are what that makes all the blockchain consensus sequences
+                                <br /> different from one another.
+                                <br /> Blockchain network facilitates millions and millions of people in the same space.
+                                <br /> So, how come they never interfere with one another or exist mutually</p>
                         </div>
                     </div>
                 </RellaxWrapper>
@@ -143,15 +149,17 @@ const Home = ()=>{
                     <div className="rectphoto" id='akshatphoto'></div>
                     <h2>Akshat Shirsat</h2>
                     <h3>(Group Leader)</h3>
-                    <h4>nishantscg@gmail.com</h4>
-                    <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
+                    <h4>akshatshirsat77@gmail.com</h4>
+                    <h5><GitHubIcon className="mui-icon" />/kingakshat</h5>
+                    <h5><LinkedInIcon className="mui-icon" />/in/akshat-shirsat/</h5>
                 </div>
                 <div className="cards">
                     <div className="rectphoto" id='nishantphoto'></div>
-                    <h2>Akshat Shirsat</h2>
-                    <h3>(Group Leader)</h3>
+                    <h2>Nishant Chavan</h2>
+                    <h3></h3>
                     <h4>nishantscg@gmail.com</h4>
                     <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
+                    <h5><LinkedInIcon className="mui-icon" /><a href="https://www.linkedin.com/in/nishant-chavan-6baa761a9/">/in/nishant-chavan/</a></h5>
                 </div>
                 <div className="cards">
                     <div className="rectphoto" id='rahulphoto'></div>

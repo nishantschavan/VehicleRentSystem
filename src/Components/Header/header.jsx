@@ -1,42 +1,52 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import './header.scss';
 import { useHistory } from "react-router-dom";
 import LoginForm from "../Log-in/LoginForm";
 import Home from "../../pages/HomePage/Home";
 import ReactDOM from "react-dom";
 import MenuIcon from '@mui/icons-material/Menu';
+import { useSelector } from "react-redux";
 
-const Header = () =>{
+const Header = () => {
 
-    const [issignbtn,setissignbtn]= useState({Issignbtn:true,btnclass:"signinbtn"});
-    const [btntxt,setbtntxt] = useState('Sign in');
+  
+  const loginstate = useSelector(state => state.loginIn.loginStatus)
+    const [btntxt, setbtntxt] = useState('Sign in');
+
+    // useEffect(() => {
+    //     if (loginstate.loginStatus == true) { setbtntxt(loginstate.loginStatus.toString()); }
+    // }, [loginstate.loginStatus]);
+
+    const [issignbtn, setissignbtn] = useState({ Issignbtn: true, btnclass: "signinbtn" });
+
+
 
     const history = useHistory();
     const navigateTo = () => history.push('/signIn');
 
-    const [Overlay,SetOverlay] = useState(false);
+    const [Overlay, SetOverlay] = useState(false);
 
-    const openSignOverlay = ()=>{
+    const openSignOverlay = () => {
         SetOverlay(!Overlay);
     }
 
-    const changesignbtn = ()=>{
-         console.log("it's working");
-        setissignbtn({Issignbtn:false,btnclass:"profilebtn"});
+    const changesignbtn = () => {
+        console.log("it's working");
+        setissignbtn({ Issignbtn: false, btnclass: "profilebtn" });
     }
 
-    const profilefunc = useCallback((profile)=>{
-        const uppertxt = profile.email[0].toUpperCase(); 
+    const profilefunc = useCallback((profile) => {
+        const uppertxt = profile;
         setbtntxt(uppertxt);
     })
 
-    const showmenu = ()=>{
+    const showmenu = () => {
         const ele = document.getElementById('mini-navbar');
-        if(ele.style.height=='100vh'){
+        if (ele.style.height == '100vh') {
             ele.style.height = '0px';
             ele.style.borderTop = 'none';
         }
-        else{
+        else {
             ele.style.height = '100vh';
             ele.style.borderTop = '1px solid #FB4C4C';
         }
@@ -48,10 +58,14 @@ const Header = () =>{
                 <a href="">Home</a>
                 <a href="">Dashboard</a>
                 <a href="">Profile</a>
-                <button id={issignbtn.btnclass} onClick={openSignOverlay}>{btntxt}</button>
+                {
+!loginstate ?
+                <button id={issignbtn.btnclass} onClick={openSignOverlay}>{btntxt}</button> :
+                <div>user</div>
+                }
                 <LoginForm open={Overlay} onchange={profilefunc} getprofile={changesignbtn}></LoginForm>
             </div>
-            <MenuIcon id="menu" onClick={showmenu}/>
+            <MenuIcon id="menu" className="mui-icon" onClick={showmenu} />
             <div className="mini-navbar" id="mini-navbar">
                 <a href="">Home</a>
                 <a href="">Dashboard</a>

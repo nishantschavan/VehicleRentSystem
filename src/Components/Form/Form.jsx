@@ -13,7 +13,7 @@ const Form = (props) => {
             </label>
 
             <input
-              className={`form-input`}
+              className="form-input"
               name={name}
               type={type}
               placeholder={placeholder}
