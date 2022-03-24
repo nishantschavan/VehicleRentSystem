@@ -43,37 +43,6 @@ const QrCode = () => {
         }
     }
 
-    const [successmsg,setsuccessmsg] = useState('');
-
-    const qrRef = useRef(null);
-
-    const handleError = (error) => {
-        console.log(error);
-    }
-
-    const handleScan = (result) => {
-        console.log('hi');
-        console.log(result);
-        
-        const codeid = "VEHICLE"; 
-        if(parseInt(result[result.length -1]) < 4){
-            for(var i=0;i<result.length-1;i++){
-                if(result[i]==codeid[i]){
-                    setsuccessmsg('Vehicle detected successfully!');
-                    setisfine(true);
-                }
-            }
-        }
-        else{ 
-            setsuccessmsg('Wrong QR code');
-            setpcolor('red');
-        }
-    }
-
-    const scanqrfile = () => {
-        qrRef.current.openImageDialog();
-    }
-
     return (
         <>
         <div className="mainpage">
@@ -85,36 +54,12 @@ const QrCode = () => {
                             style={{ width: "50%" }}
                             onError={handleErrorwebcam}
                             onScan={handleScanwebcam}
+                            facingMode="user"
                         />
                     </div>
                 </div>
-                <button id="nextbtn" className="webcam-btn" onClick={navigateTo}>Next</button>
+                <button id="nextbtn" className="webcam-btn" onClick={navigateTo}><h3>Next</h3><ArrowForwardIcon className="mui-icon" /></button>
                 <p className="webcam-btn" style={{color:`${pcolor}`}}>{QrResult}</p>
-            </div>
-
-            <div className="secondhalf-qrcode">
-                <div className="qrcode">
-                    <QrReader
-                        ref={qrRef}
-                        delay={300}
-                        // style={{
-                        //     width: "75%",
-                        // }}
-                        width="100%"
-                        onError={handleError}
-                        onScan={handleScan}
-                        legacyMode
-                    />
-                </div>
-
-                <div className="booknowpage2-btnflex">
-                    <button className="sendbtn" onClick={scanqrfile}>choose file</button>
-                    <h6>or</h6>
-                    {/* <button className="sendbtn" onClick={navigateToScan}>Scan</button> */}
-                </div>
-                            
-                <h4 style={{color:`${pcolor}`}}>{successmsg}</h4>
-                <button id="nextbtn" onClick={navigateTo}><h3>Next</h3><ArrowForwardIcon className="mui-icon" /> </button>
             </div>
         </div>
         </>

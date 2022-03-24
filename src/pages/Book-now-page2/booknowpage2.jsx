@@ -63,7 +63,7 @@ const Booknowpage2 = () => {
                     <div className="content">
                         <h2>Scan QR code</h2>
 
-                        {/* <div className="qrcode">
+                        <div className="qrcode">
                             <QrReader
                                 ref={qrRef}
                                 delay={300}
@@ -84,7 +84,7 @@ const Booknowpage2 = () => {
                         </div>
                         
                         <h4 style={{color:`${pcolor}`}}>{successmsg}</h4>
-                        <button id="nextbtn" onClick={navigateTo}><h3>Next</h3><ArrowForwardIcon className="mui-icon" /> </button> */}
+                        <button id="nextbtn" onClick={navigateTo}><h3>Next</h3><ArrowForwardIcon className="mui-icon" /> </button>
                     </div>
                 </div>
                 <div className="booknowpage2-secondhalf">

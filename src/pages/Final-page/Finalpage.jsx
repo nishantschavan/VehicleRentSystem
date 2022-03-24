@@ -49,7 +49,7 @@ const Finalpage = ()=>{
                 <div className="circle-block">
                     <div className="outer-circle">
                         <div className="inner-circle">
-                            <h2 style={{display:animation1.lockstr}}>Locked !</h2>
+                            <h2 style={{display:animation1.lockstr}}>Verified !</h2>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                             <defs>
@@ -97,12 +97,12 @@ const Finalpage = ()=>{
                         <p>Click on Refund button to get refund amount on your account.</p>
                     </div>
                     <div className="button-block">
-                        <button id="nextbtn" onClick={onLock3}>Lock</button>
+                        <button id="nextbtn" onClick={onLock3}>Get</button>
                     </div>
                     <div className="circle-block">
                         <div className="outer-circle">
                             <div className="inner-circle">
-                                <h2 style={{display:animation3.lockstr}}>Locked !</h2>
+                                <h2 style={{display:animation3.lockstr}}>Refunded!</h2>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                                 <defs>

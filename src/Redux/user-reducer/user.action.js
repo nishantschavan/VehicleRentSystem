@@ -1,7 +1,9 @@
-import { USER } from "../constants.js";
+import { USER } from "../constants";
 import axios from "axios";
-const userEndPoint = "";
-const userAction = (payload) => (dispatch) => {
+
+const userEndPoint = "/transaction/request";
+
+export const userAction = (payload) => (dispatch) => {
   axios
     .post(userEndPoint, payload)
     .then((res) => {
@@ -12,5 +14,3 @@ const userAction = (payload) => (dispatch) => {
       console.log("err in user data api: ", err);
     });
 };
-
-export default userAction;

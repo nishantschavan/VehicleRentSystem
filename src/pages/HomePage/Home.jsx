@@ -150,30 +150,32 @@ const Home = ()=>{
                     <h2>Akshat Shirsat</h2>
                     <h3>(Group Leader)</h3>
                     <h4>akshatshirsat77@gmail.com</h4>
-                    <h5><GitHubIcon className="mui-icon" />/kingakshat</h5>
-                    <h5><LinkedInIcon className="mui-icon" />/in/akshat-shirsat/</h5>
+                    <h5><GitHubIcon className="mui-icon" /><a href="https://github.com/kingakshat" style={{color:"white"}}>/kingakshat</a></h5>
+                    <h5><LinkedInIcon className="mui-icon" /><a href="https://www.linkedin.com/in/akshat-shirsat/" style={{color:"white"}}>/in/akshat-shirsat/</a></h5>
                 </div>
                 <div className="cards">
                     <div className="rectphoto" id='nishantphoto'></div>
                     <h2>Nishant Chavan</h2>
                     <h3></h3>
                     <h4>nishantscg@gmail.com</h4>
-                    <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
-                    <h5><LinkedInIcon className="mui-icon" /><a href="https://www.linkedin.com/in/nishant-chavan-6baa761a9/">/in/nishant-chavan/</a></h5>
+                    <h5><GitHubIcon className="mui-icon" /><a href="https://github.com/nishantschavan" style={{color:"white"}}>/nishantschavan</a></h5>
+                    <h5><LinkedInIcon className="mui-icon" /><a href="https://www.linkedin.com/in/nishant-chavan-6baa761a9/" style={{color:"white"}}>/in/nishant-chavan/</a></h5>
                 </div>
                 <div className="cards">
                     <div className="rectphoto" id='rahulphoto'></div>
-                    <h2>Akshat Shirsat</h2>
-                    <h3>(Group Leader)</h3>
-                    <h4>nishantscg@gmail.com</h4>
-                    <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
+                    <h2>Rahul Chakravorty</h2>
+                    <h3></h3>
+                    <h4>rahulchakravorty01@gmail.com</h4>
+                    <h5><GitHubIcon className="mui-icon" /><a href="https://github.com/RahulChakravorty" style={{color:"white"}}>/RahulChakravorty</a></h5>
+                    <h5><LinkedInIcon className="mui-icon" /><a href="https://www.linkedin.com/in/rahul-chakravorty-6540ba215" style={{color:"white"}}>/in/rahul-chakravorty-6540ba215</a></h5>
                 </div>
                 <div className="cards">
                     <div className="rectphoto" id='giribabuphoto'></div>
-                    <h2>Akshat Shirsat</h2>
-                    <h3>(Group Leader)</h3>
-                    <h4>nishantscg@gmail.com</h4>
-                    <h5><GitHubIcon className="mui-icon" />/nishantschavan</h5>
+                    <h2>Giribabu Anisetti</h2>
+                    <h5>Website : <a href="http://giribabuanisetti.codes/" style={{color:"white"}}>giribabuanisetti.codes/</a></h5>
+                    <h4>girianisetty@gmail.com</h4>
+                    <h5><GitHubIcon className="mui-icon" /><a href="https://github.com/iamgiribabu" style={{color:"white"}}>/iamgiribabu</a></h5>
+                    <h5><LinkedInIcon className="mui-icon" /><a href="https://www.linkedin.com/in/giribabu-anisetti-208863154/" style={{color:"white"}}>/in/giribabu-anisetti-208863154/</a></h5>
                 </div>
             </div>
 

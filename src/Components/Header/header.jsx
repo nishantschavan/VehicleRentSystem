@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
 
   
-  const loginstate = useSelector(state => state.loginIn.loginStatus)
+    const loginstate = useSelector(state => state.loginIn)
     const [btntxt, setbtntxt] = useState('Sign in');
 
     // useEffect(() => {
@@ -59,11 +59,17 @@ const Header = () => {
                 <a href="">Dashboard</a>
                 <a href="">Profile</a>
                 {
-!loginstate ?
-                <button id={issignbtn.btnclass} onClick={openSignOverlay}>{btntxt}</button> :
-                <div>user</div>
+                !loginstate.loginStatus ?
+                <button id="signinbtn" onClick={openSignOverlay}>{btntxt}</button> :
+                <button id="profilebtn" >{loginstate.userData.data.username[0].toUpperCase()}</button>
                 }
                 <LoginForm open={Overlay} onchange={profilefunc} getprofile={changesignbtn}></LoginForm>
+                {   !loginstate.loginStatus ? null:
+                    <div className="user-info-overlay">
+                        <h4>{loginstate.userData.data.username}</h4>
+                        <h4>{loginstate.userData.data.email}</h4>
+                    </div>
+                }
             </div>
             <MenuIcon id="menu" className="mui-icon" onClick={showmenu} />
             <div className="mini-navbar" id="mini-navbar">

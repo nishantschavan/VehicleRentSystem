@@ -54,7 +54,9 @@ const LoginForm = ({open,onchange,getprofile}) => {
     setUserLogin({ ...userLogin, [name]: value });
   };
 
-  if (!open) return null
+  //if (!open) return null
+
+  if(loginstate.loginStatus || !open) return null
 
   return ReactDOM.createPortal(
     <div className="login-container">
@@ -104,6 +106,7 @@ const LoginForm = ({open,onchange,getprofile}) => {
     </div>,
     document.getElementById('overlay')
   );
+    
 };
 
 export default LoginForm;

@@ -2,7 +2,7 @@ import { USER } from "../constants";
 
 const initialState = {
   UserStatus: false,
-  userData: [],
+  userData: {},
 };
 
 const UserReducer = (state = initialState, action) => {
@@ -10,7 +10,7 @@ const UserReducer = (state = initialState, action) => {
     case USER:
       return {
         ...state,
-        userData: [action.payload],
+        userData: action.payload,
         UserStatus: true,
       };
     default:

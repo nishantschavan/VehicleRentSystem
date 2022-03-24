@@ -5,7 +5,7 @@ const Form = (props) => {
   return (
     <form className="form-container" onSubmit={(e) => onSubmit(e)}>
       {formLabel.map(
-        ({ label, name, type, placeholder, value, optional, ...restProps }) => (
+        ({ label,className,id, name, type, placeholder, value, optional, ...restProps }) => (
           <div className="form-control">
             <label className="login-labels">
               {label}
@@ -13,7 +13,8 @@ const Form = (props) => {
             </label>
 
             <input
-              className="form-input"
+              className={className}
+              id={id}
               name={name}
               type={type}
               placeholder={placeholder}

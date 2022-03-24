@@ -3,12 +3,14 @@ import { useState } from "react";
 import Form from "../Form/Form";
 import "./SignUp.scss";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { signupAction } from "../../Redux/sign-up-reducer/signup.action";
 
 
 const SignUp = () => {
+  const signupstate = useSelector(state=>state);
   const dispatch = useDispatch();
   const [error, setError] = useState(false);
   const [data, setData] = useState();
@@ -20,7 +22,8 @@ const SignUp = () => {
     return true;
   };
 
-  const endpoint = '/register';
+  const history = useHistory();
+  const navigateTo = () => history.push('/');
 
   const handleSubmit = (e) => {
     // console.log(data);
@@ -34,6 +37,8 @@ const SignUp = () => {
     e.preventDefault();
     console.log("sign up data", data);
     dispatch(signupAction(data));
+
+    if(signupstate.signUpStatus){history.push('/');}
   };
 
   const handleChange = (target) => {
@@ -50,10 +55,11 @@ const SignUp = () => {
         error={error}
         formLabel={[
           {
+            className:"form-input",
             name: "username",
             label: "Name",
             type: "text",
-            placeholder: "enter your name",
+            placeholder: "Enter your name",
             handleChange: (target) => {
               handleChange(target);
             },
@@ -71,20 +77,22 @@ const SignUp = () => {
           //   required: true,
           // },
           {
+            className:"form-input",
             name: "email",
             label: "Email Id",
             type: "email",
-            placeholder: "enter your email Id",
+            placeholder: "Enter your email Id",
             handleChange: (target) => {
               handleChange(target);
             },
             required: true,
           },
           {
+            className:"form-input",
             name: "password",
             label: "Create password",
             type: "password",
-            placeholder: "create password",
+            placeholder: "Create password",
             handleChange: (target) => {
               handleChange(target);
             },
@@ -101,6 +109,7 @@ const SignUp = () => {
           //   required: true,
           // },
           {
+            id:"submit-btn",
             name: "confirm btn",
             label: "",
             type: "submit",
