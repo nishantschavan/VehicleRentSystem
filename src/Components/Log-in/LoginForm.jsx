@@ -1,60 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./LoginForm.scss";
 import ReactDOM from 'react-dom';
-import CloseIcon from '@mui/icons-material/Close';
-import Header from "../Header/header";
-import TextField from '@mui/material/TextField';
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 
 import { loginAction } from "../../Redux/login-reducer/login.action";
 
 const LoginForm = ({open,onchange,getprofile}) => {
 
-  const loginstate = useSelector(state => state.loginIn)
+  const loginstate = useSelector(state => state.loginIn);
+
+  const [alertonlogin,setalertonlogin] = useState(false);
 
   const dispatch = useDispatch();
   const [userLogin, setUserLogin] = useState();
   const [isUserLogged,setisUserLogged] = useState(false);
   const [overlayopen,setoverlayopen] = useState(!open);
 
-  const endpoint = '/login';
-  // const history = useHistory();
 
   const handleSubmit = (e) => {
-    // history.push("/secondpage");
-    // console.log(userLogin);
-    // getprofile();
-    // onchange(userLogin);
-
-    // axios.post(endpoint,userLogin).then(res=>{
-    //   console.log(res);
-    // })
-
     e.preventDefault();
 
     dispatch(loginAction(userLogin));
     getprofile();
-
-    console.log("this is on submit", userLogin);
-    console.log(loginstate)
-
-    // if(loginstate.userData.data.Error){
-    //   alert(loginstate.userData.data.Error)
-    // }
-    // else{
-    //   setoverlayopen(!overlayopen)
-    // }
     
+    console.log("this is on submit", userLogin);
   };
-
+  
+  
   const handleChange = (e) => {
     const { value, name } = e.target;
     setUserLogin({ ...userLogin, [name]: value });
   };
 
-  //if (!open) return null
 
   if(loginstate.loginStatus || !open) return null
 

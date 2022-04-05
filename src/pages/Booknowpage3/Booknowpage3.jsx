@@ -12,7 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 const Booknowpage3 = ()=>{
     const dispatch = useDispatch();
 
-const [amount, setAmount] = useState(0)
+
+    const [amount, setAmount] = useState(0)
     const [bgcolor,setbgcolor] = useState("nextbtn");
     const [appearbtn,setappearbtn] = useState("bappearbtn")
     const userData = useSelector(state => state.loginIn.userData.data.public_key)
@@ -27,13 +28,17 @@ const [amount, setAmount] = useState(0)
 
         }))
     }
+    
     const handleChange = (e) => {
         console.log(e.target.value);
         setAmount(e.target.value)
     }
     console.log("amount", amount)
+
     const history = useHistory();
-    const navigateTo = () => history.push('/Booknowpage4');
+    const navigateTo = () =>{
+        history.push('/Booknowpage4');
+    } 
 
     return(
         <div className="container">

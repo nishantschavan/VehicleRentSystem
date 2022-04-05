@@ -35,17 +35,17 @@ const Home = ()=>{
 
     return(
         <>
-        <div className="Home-container">
+        <div className="Home-container" id='Home-container'>
             <div className="bottomnavbar">
                 <div className="navtoggle">
-                    <a href="">Home</a>
-                    <a href="">Dashboard</a>
+                    <a href=".Home-mainpage">Home</a>
+                    <a href=".blockchain-heading">Technology</a>
                     <a href="">Profile</a>
                     <a href="">Setting</a>
                 </div>
             </div>
             <Header/>
-            <div className="Home-mainpage">
+            <div className="Home-mainpage" id='Home-mainpage'>
                 <div className="Home-firsthalf">
                     <div className="Home-content">
                         <h1 id='frontpage-heading'>Always &nbsp;a &nbsp;ride <br/> where you want</h1>
@@ -55,7 +55,7 @@ const Home = ()=>{
                 </div>
                 <div className="Home-secondhalf"></div>
             </div>
-            <div className="sharetab">
+            <div className="sharetab" id='sharetab'>
                 <h4>Share</h4>
                 <WhatsAppIcon className="mui-icon" />
                 <FacebookIcon className="mui-icon" />
@@ -66,7 +66,7 @@ const Home = ()=>{
         </div>
 
         {/* <RellaxWrapper speed={-5} zIndex={2}> */}
-                <div className="blockchain-heading">
+                <div className="blockchain-heading" id='blockchain-heading'>
                     <img src={blockicon} alt="" />
                     <h1>Blockchain Secured Transactions</h1>
                     <h3>Follow things offered by our platform by using blockchain to users</h3>
@@ -139,7 +139,7 @@ const Home = ()=>{
             
         </div>
 
-        <div className="projectmember">
+        <div className="projectmember" id='projectmember'>
             <div className="projectmember-heading">
                 <h1>Meet Our Team</h1>
             </div>

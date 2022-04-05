@@ -62,11 +62,19 @@
 
 #profilebtn{
     background-color: #FB4C4C;
+    // width: 60px;
     padding: 10px 12px;
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 10%;
     font-size: 1.5vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    h4{
+        font-size: 1.5vw;
+    }
 }
 
 #menu{
@@ -77,21 +85,27 @@
     display: none;
 }
 
-.user-info-overlay{
-    display: none;
-}
+// .user-info-overlay{
+//     display: none;
+// }
 
-#profilebtn:hover ~ .user-info-overlay{
-    display: block;
-    height: 100px;
+// #profilebtn:hover ~ 
+.user-info-overlay{
+    height: 150px;
     position: absolute;
     background-color: white;
     top:70px;
-    right: 70px;
-    border-radius: 15px 0px 15px 15px;
+    right: 20px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     h4{
         padding:15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: normal;
+    }
+    #logoutoption{
+        cursor: pointer;
     }
 }
 
@@ -107,6 +121,9 @@
 }
 @media (max-width:800px) {
     .navbar a{
+        font-size: 2vw;
+    }
+    #profilebtn h4{
         font-size: 2vw;
     }
 }
@@ -126,6 +143,9 @@
     .navbar a{
         font-size: 3vw;
     }
+    #profilebtn h4{
+        font-size: 3vw;
+    }
     #signinbtn{
         font-size: 3vw;
         width: 20vw;
@@ -134,8 +154,21 @@
 }
 
 @media (max-width:415px) {
+    .navbar{
+        justify-content: flex-start;
+    }
     .navbar a{
         display: none;
+    }
+    #profilebtn{
+        margin-left: 20px;
+    }
+    #profilebtn h4{
+        font-size: 4vw;
+    }
+    .user-info-overlay{
+        left: 20px;
+        right: 100px;
     }
     #signinbtn{
         margin:1vh ;
