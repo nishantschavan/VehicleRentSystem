@@ -1,44 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./LoginForm.scss";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { loginAction } from "../../Redux/login-reducer/login.action";
 
-const LoginForm = ({open,onchange,getprofile}) => {
+const LoginForm = ({ open, onchange, getprofile }) => {
+  const loginstate = useSelector((state) => state.loginIn);
 
-  const loginstate = useSelector(state => state.loginIn);
-
-  const [alertonlogin,setalertonlogin] = useState(false);
+  const [alertonlogin, setalertonlogin] = useState(false);
 
   const dispatch = useDispatch();
   const [userLogin, setUserLogin] = useState();
-  const [isUserLogged,setisUserLogged] = useState(false);
-  const [overlayopen,setoverlayopen] = useState(!open);
-
+  const [isUserLogged, setisUserLogged] = useState(false);
+  const [overlayopen, setoverlayopen] = useState(!open);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     dispatch(loginAction(userLogin));
     getprofile();
-    
+
     console.log("this is on submit", userLogin);
   };
-  
-  
+
   const handleChange = (e) => {
     const { value, name } = e.target;
     setUserLogin({ ...userLogin, [name]: value });
   };
 
-
-  if(loginstate.loginStatus || !open) return null
+  if (loginstate.loginStatus || !open) return null;
 
   return ReactDOM.createPortal(
     <div className="login-container">
       <form onSubmit={handleSubmit} className="loginform-container">
+        {!loginstate.loginStatus ? <p>{loginstate.errMessage}</p> : null}
         <b>Log in yourself, quickly !</b>
         <h4>Enter your Email and password carefully.</h4>
 
@@ -78,13 +75,14 @@ const LoginForm = ({open,onchange,getprofile}) => {
             placeholder="password"
           />
         </div>
-        <button type="submit" className="login-btn">Login</button>
+        <button type="submit" className="login-btn">
+          Login
+        </button>
         <Link to={"/signUp"}>Don’t have an account ?</Link>
       </form>
     </div>,
-    document.getElementById('overlay')
+    document.getElementById("overlay")
   );
-    
 };
 
 export default LoginForm;
