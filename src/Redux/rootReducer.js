@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import LoginReducer from "./login-reducer/login.reducer";
+import QrReducer from "./qr-reducer/qr.reducer";
 import SignUpReducer from "./sign-up-reducer/signup.reducer";
 import UserReducer from "./user-reducer/user.reducer";
 import QrReducer from "./qr-reducer/qr.reducer";
