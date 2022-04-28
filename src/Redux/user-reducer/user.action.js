@@ -8,6 +8,7 @@ export const userAction = (payload) => (dispatch) => {
     .post(userEndPoint, payload)
     .then((res) => {
       dispatch({ type: USER, payload: res });
+      
       console.log("user data success full", res);
     })
     .catch((err) => {

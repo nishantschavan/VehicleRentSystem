@@ -1,16 +1,60 @@
-import React, { useState } from "react";
+import React, { useState ,useRef} from "react";
 import './Finalpage.scss';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {useHistory} from 'react-router-dom';
+import QrReader from "react-qr-reader";
+import { useSelector } from "react-redux";
 
 const Finalpage = ()=>{
 
     const history = useHistory();
     const navigateTo = () => history.push('/');
 
+    const qrcodstate = useSelector(state => state.Qr)
+
+    const [showloading, setshowloading] = useState(false);
+
     const [animation1,setanimation1] = useState({anim:'',lockstr:'none'});
     const [animation2,setanimation2] = useState({anim:'',lockstr:'none'});
     const [animation3,setanimation3] = useState({anim:'',lockstr:'none'});
+
+    const qrRef = useRef(null);
+
+    const handleError = (error) => {
+        console.log(error);
+    }
+
+
+    const handleScan = (result) => {
+        console.log('hi');
+        console.log(result);
+        setshowloading(false);
+
+        if (result) {
+            const codeid = "VEHICLE";
+            if (parseInt(result[result.length - 1]) < 5) {
+                for (var i = 0; i < result.length - 1; i++) {
+                    if (result[i] == codeid[i] && i == result.length-2) {
+                        console.log('Vehicle detected successfully!');
+                        console.log('Vehicle detected successfully!');
+                        // dispatch(qrAction(result));
+                        // setisfine(true);
+                        (qrcodstate.qrData == result)? 
+                            onLock1()
+                            :console.log('not done');
+                    }
+                }
+            }
+            else {
+                console.log('Wrong QR code');
+            }
+        }
+    }
+
+    const scanqrfile = () => {
+        qrRef.current.openImageDialog();
+    }
+
 
     const onLock1 = ()=>{
         setanimation1({anim:'anim',lockstr:'none'});
@@ -18,7 +62,9 @@ const Finalpage = ()=>{
             setanimation1({anim:'anim',lockstr:'inline'});
             console.log('hi');
         }, 2000);
+        // setshowloading(true);
     }
+
     const onLock2 = ()=>{
         setanimation2({anim:'anim',lockstr:'none'});
         setTimeout(() => {
@@ -26,12 +72,18 @@ const Finalpage = ()=>{
             console.log('hi');
         }, 2000);
     }
+
     const onLock3 = ()=>{
         setanimation3({anim:'anim',lockstr:'none'});
         setTimeout(() => {
             setanimation3({anim:'anim',lockstr:'inline'});
             console.log('hi');
         }, 2000);
+    }
+
+    const openscanoverlay = ()=>{
+        console.log('qrcode')
+        setshowloading(true);
     }
 
     return(
@@ -44,7 +96,7 @@ const Finalpage = ()=>{
                         Click on verify button to start process.</p>
                 </div>
                 <div className="button-block">
-                    <button id="nextbtn" onClick={onLock1}>Scan</button>
+                    <button id="nextbtn" onClick={openscanoverlay}>Scan</button>
                 </div>
                 <div className="circle-block">
                     <div className="outer-circle">
@@ -116,6 +168,25 @@ const Finalpage = ()=>{
                         </div>
                     </div>
                 </div>
+
+                {showloading ?
+                    <div className="overlayqrscandiv">
+                        <div className="qrcode">
+                            <QrReader
+                                ref={qrRef}
+                                delay={300}
+                                // style={{
+                                //     width: "75%",
+                                // }}
+                                width="50%"
+                                onError={handleError}
+                                onScan={handleScan}
+                                legacyMode={true}
+                            />
+                            <button onClick={scanqrfile}>Scan</button>
+                        </div>
+                    </div> : null
+                }
         </div>
     )
 };

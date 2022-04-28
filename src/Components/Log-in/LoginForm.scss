@@ -151,6 +151,12 @@
   font-size: smaller;
 }
 
+.error-message{
+  color: blue;
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width:800px) {
    .loginform-container{
      width: 40vw;

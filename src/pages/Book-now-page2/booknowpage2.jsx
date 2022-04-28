@@ -6,6 +6,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Stepsbar from "../../Components/Stepsbar/Stepsbar";
 import { useHistory } from 'react-router-dom';
 import QrReader from "react-qr-reader";
+import { qrAction } from "../../Redux/qr-reducer/qr.action";
+import { useDispatch } from "react-redux";
 
 const Booknowpage2 = () => {
 
@@ -15,6 +17,8 @@ const Booknowpage2 = () => {
             history.push('/Booknowpage3');
         }
     }
+
+    const dispatch = useDispatch();
 
     const [successmsg, setsuccessmsg] = useState('');
     const [pcolor, setpcolor] = useState('green');
@@ -35,8 +39,10 @@ const Booknowpage2 = () => {
             const codeid = "VEHICLE";
             if (parseInt(result[result.length - 1]) < 5) {
                 for (var i = 0; i < result.length - 1; i++) {
-                    if (result[i] == codeid[i]) {
+                    if (result[i] == codeid[i] && i == result.length-2) {
                         setsuccessmsg('Vehicle detected successfully!');
+                        console.log('Vehicle detected successfully!');
+                        dispatch(qrAction(result));
                         setisfine(true);
                     }
                 }

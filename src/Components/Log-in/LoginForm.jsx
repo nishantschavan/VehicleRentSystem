@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./LoginForm.scss";
 import ReactDOM from 'react-dom';
 import { useSelector, useDispatch } from "react-redux";
+import ErrorIcon from '@mui/icons-material/Error';
 
 import { loginAction } from "../../Redux/login-reducer/login.action";
 
@@ -23,7 +24,8 @@ const LoginForm = ({open,onchange,getprofile}) => {
 
     dispatch(loginAction(userLogin));
     getprofile();
-    
+
+    setalertonlogin(true);
     console.log("this is on submit", userLogin);
   };
   
@@ -78,6 +80,10 @@ const LoginForm = ({open,onchange,getprofile}) => {
             placeholder="password"
           />
         </div>
+        {alertonlogin?
+          <p className="error-message"><ErrorIcon className="mui-icon"/>{loginstate.errMessage}</p>:
+          null
+        }
         <button type="submit" className="login-btn">Login</button>
         <Link to={"/signUp"}>Don’t have an account ?</Link>
       </form>

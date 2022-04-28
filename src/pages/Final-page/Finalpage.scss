@@ -47,6 +47,23 @@
     }
 }
 
+.overlayqrscandiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50vw;
+    height: 50vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.qrcode{
+    width:50%;
+}
+
 .button-block{
     flex: 1;
     display: flex;

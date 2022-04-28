@@ -5,6 +5,8 @@ import '../pages.scss';
 import { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useDispatch } from "react-redux";
+import { qrAction } from "../../Redux/qr-reducer/qr.action";
 
 const QrCode = () => {
 
@@ -14,6 +16,8 @@ const QrCode = () => {
             history.push('/Booknowpage3');
         }
     }
+
+    const dispatch = useDispatch();
 
     const [QrResult, setQrResult] = useState('');
     const [pcolor, setpcolor] = useState('green');
@@ -30,9 +34,14 @@ const QrCode = () => {
             const codeid = "VEHICLE";
             if (parseInt(result[result.length - 1]) < 5) {
                 for (var i = 0; i < result.length - 1; i++) {
-                    if (result[i] == codeid[i]) {
+                    if (result[i] == codeid[i] && i == result.length-2) {
                         setQrResult('Vehicle detected successfully!');
+                        console.log('Vehicle detected successfully!');
+                        dispatch(qrAction(result));
                         setisfine(true);
+                    }
+                    else{
+                        break;
                     }
                 }
             }

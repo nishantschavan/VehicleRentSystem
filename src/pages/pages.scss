@@ -184,6 +184,9 @@
         width: 15vw;
         height: 8vh;
     }
+    .loadingdiv{
+        height: 800px !important;
+    }
 }
 
 @media (max-width:700px) {
@@ -254,5 +257,7 @@
         width: 70vw;
         height: 7vh;
     }
-    
+    .loadingdiv{
+        height: 900px !important;
+    }
 }
